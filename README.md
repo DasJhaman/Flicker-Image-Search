@@ -75,6 +75,8 @@ The application is divided into three main layers:
 
 ### Android
 ![Android Video](https://github.com/user-attachments/assets/3d52442e-5ad8-427b-9a36-0358c97e698c)
+![Screen Shot](![Uploading image.png…]()
+)
 
 ## 📦 Compiled APK
 
