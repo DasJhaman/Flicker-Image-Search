@@ -1,0 +1,19 @@
+CREATE TABLE searchHistory (
+    id INTEGER PRIMARY KEY AUTOINCREMENT,
+    query TEXT NOT NULL,
+    timestamp INTEGER NOT NULL
+);
+
+upsertSearchHistory:
+INSERT INTO searchHistory (query, timestamp) VALUES (?, ?);
+
+selectSearchHistory:
+SELECT * FROM searchHistory
+GROUP BY query
+ORDER BY timestamp DESC;
+
+deleteSearchHistoryItem:
+DELETE FROM searchHistory WHERE id = ?;
+
+clearAllSearchHistory:
+DELETE FROM searchHistory;

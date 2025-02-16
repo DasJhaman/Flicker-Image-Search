@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <string name="generic_error_title">Error</string>
+    <string name="generic_error_message">Please try again</string>
+    <string name="generic_error_cta_title">Retry</string>
+    <string name="search_label">Search...</string>
+
+<!--    <string name="generic_empty_title">No Results Found</string>-->
+<!--    <string name="generic_empty_message">Use the search bar to find something interesting!</string>-->
+
+    <string name="generic_empty_title">Nothing Here Yet</string>
+    <string name="generic_empty_message">Try using the search bar to find something interesting!</string>
+    <string name="generic_empty_cta_title">Search Now</string>
+</resources>
