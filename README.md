@@ -71,6 +71,16 @@ The application is divided into three main layers:
     -   Repositories interact with data sources to fetch or store data.
     -   The Domain layer interacts with Repositories to access data.
 
+## 📦 Compiled APK
+
+For those who want to quickly try out the app without building it from source, a pre-compiled APK is available:
+
+-   [Download Flickr Search APK](YOUR_APK_DOWNLOAD_LINK_HERE)
+
+**Note:**
+
+-   You may need to enable "Install from Unknown Sources" in your Android device's settings to install the APK.
+-   This APK is for testing purposes only.
 
 ## 🔧 Setup & Installation
 
