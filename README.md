@@ -75,7 +75,7 @@ The application is divided into three main layers:
 
 For those who want to quickly try out the app without building it from source, a pre-compiled APK is available:
 
--   [Download Flickr Search APK](YOUR_APK_DOWNLOAD_LINK_HERE)
+-   [Download Flickr Search APK](https://www.upload-apk.com/mPSP8yCuo3EA4NA)
 
 **Note:**
 
