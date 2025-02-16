@@ -138,6 +138,10 @@ The project includes unit tests for core functionalities:
 
 -   **`SearchHistoryTableQueriesTest`:** Tests queries for storing and retrieving search history.
 
+### ✅ UI Tests
+
+-   **`DashboardScreenTest`:** Tests for UI screen. Run By using **`./gradlew connectedDebugAndroidTest`**
+
 ### How to Run Tests
 
 -   Open the terminal in Android Studio.
