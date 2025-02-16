@@ -20,12 +20,12 @@ fun DashboardScreen() {
 
     DashboardScreenStateLess(
         contentState = uiData.contentState,
-        onRetryClicked = {},
-        photo = uiData.photo,
-        searchHistory = uiData.searchHistory,
-        onSearchQueryChange = dashboardScreenViewModel::updateSearchQuery,
         query = uiData.searchQuery,
         searchExpanded = uiData.searchExpanded,
+        searchHistory = uiData.searchHistory,
+        photo = uiData.photo,
+        onRetryClicked = dashboardScreenViewModel::search,
+        onSearchQueryChange = dashboardScreenViewModel::updateSearchQuery,
         onExpandedChange = dashboardScreenViewModel::onSearchExpandedChange,
         onSearchQueryClick = dashboardScreenViewModel::search
     )
@@ -37,34 +37,37 @@ fun DashboardScreenStateLess(
     contentState: ContentState,
     query: String?,
     searchExpanded: Boolean,
-    onExpandedChange: (Boolean) -> Unit,
     searchHistory: List<SearchHistory>,
-    onSearchQueryClick: () -> Unit,
-    onSearchQueryChange: (String) -> Unit = {},
     photo: List<Photo>,
-    onRetryClicked: () -> Unit,
+    onExpandedChange: (Boolean) -> Unit,
+    onSearchQueryChange: (String) -> Unit = {},
+    onSearchQueryClick: () -> Unit,
+    onRetryClicked: () -> Unit
 ) {
     Scaffold(
-        modifier = modifier, topBar = {
+        modifier = modifier,
+        topBar = {
             DashboardSearchBar(
-                onSearchQueryChange = onSearchQueryChange,
                 query = query,
                 searchExpanded = searchExpanded,
-                onExpandedChange = onExpandedChange,
                 searchHistory = searchHistory,
+                onExpandedChange = onExpandedChange,
+                onSearchQueryChange = onSearchQueryChange,
                 onSearchQueryClick = onSearchQueryClick
             )
-        }) { paddingValues ->
+        }
+    ) { paddingValues ->
         Column(modifier = Modifier.padding(paddingValues)) {
             when (contentState) {
                 ContentState.LOADING -> GenericLoading()
                 ContentState.ERROR -> GenericError(onRetryClicked = onRetryClicked)
                 ContentState.SUCCESS -> {
-                    DashboardScreenContentLoaded(photo = photo,
-                        onSearchClicked = { onExpandedChange(true) })
+                    DashboardScreenContentLoaded(
+                        photo = photo,
+                        onSearchClicked = { onExpandedChange(true) }
+                    )
                 }
             }
-
         }
     }
 }

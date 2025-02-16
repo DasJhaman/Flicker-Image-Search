@@ -55,6 +55,7 @@ fun DashboardSearchBar(
                 onQueryChange = onSearchQueryChange,
                 query = query.orEmpty(),
                 onSearch = {
+                    onExpandedChange(false)
                     onSearchQueryClick()
                 },
                 expanded = searchExpanded,
