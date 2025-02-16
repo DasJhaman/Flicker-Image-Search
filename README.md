@@ -1,120 +1,49 @@
-Flickr Image Search App
+📸 Flickr Search App
 
-📌 Overview
+A Kotlin Multiplatform (KMP) application that allows users to search for photos using the Flickr API. The app follows modern development practices, including Jetpack Compose, MVVM architecture, and unit testing.
 
-This is a Kotlin Multiplatform (KMP) application that allows users to search for images using the Flickr API and displays results in a scrollable grid. The app also maintains a search history, enabling users to revisit previous searches.
+🚀 Features
 
-✨ Features
+Search for photos using the Flickr API
 
-🔍 Image Search: Users can search for images using the Flickr API.
+Display search results in a grid format
 
-📜 Search History: Previous searches are saved and can be accessed later.
+View image details
 
-📷 Image Grid View: Display search results in a beautiful, scrollable grid using Jetpack Compose.
+Save search history
 
-🛠 Offline Persistence: Search history is stored using SQLDelight.
+Unit tested repository, database, and utility functions
 
-📡 Networking with Ktor: Handles API requests and responses efficiently.
+🛠️ Tech Stack
 
-🏗 MVVM Clean Architecture: Ensures separation of concerns for scalability and maintainability.
+Kotlin Multiplatform (KMP) - Shared logic across Android & other platforms
 
-🚀 Multiplatform Support: Built using Compose Multiplatform, making it adaptable for different platforms.
+Jetpack Compose - UI Toolkit for building native UI
 
-🏛 Architecture
+Retrofit - For networking and API calls
 
-This project follows MVVM Clean Architecture, which is divided into three main layers:
+SQLDelight - For local database storage
 
-1️⃣ Data Layer
+Kotlin Coroutines & Flow - For asynchronous operations
 
-This layer is responsible for data handling and consists of:
+MockK - For unit testing
 
-Repositories: Serve as a bridge between the data sources and the domain layer.
-
-Data Sources: Handle API calls using Ktor and local database interactions with SQLDelight.
-
-Models: Define data structures using Kotlin Serialization.
-
-2️⃣ Domain Layer
-
-This layer is independent of any framework and consists of:
-
-Use Cases: Business logic that acts as an intermediary between the repository and the presentation layer.
-
-Repository Interfaces: Define the contract for data handling, implemented by the data layer.
-
-3️⃣ Presentation Layer
-
-This layer is responsible for UI and consists of:
-
-ViewModel (MVVM Pattern): Uses Koin for Dependency Injection and exposes state for UI.
-
-Jetpack Compose UI: Implements the UI using Compose Multiplatform, ensuring a reactive and declarative approach.
-
-State Management: Follows a unidirectional data flow pattern.
-
-🏗 Tech Stack
-
-Tech
-
-Purpose
-
-Kotlin Multiplatform (KMP)
-
-Enables code-sharing across platforms
-
-Compose Multiplatform
-
-UI framework for a reactive and declarative UI
-
-Ktor
-
-Networking library for API requests
-
-Kotlin Serialization
-
-JSON parsing and serialization
-
-Koin
-
-Dependency injection framework
-
-SQLDelight
-
-Local database for storing search history
-
-BuildKonfig
-
-Embeds API keys and configuration from Gradle
-
-Version Catalogs
-
-Manages dependencies efficiently
+Kotlinx DateTime - For date and time formatting
 
 🔧 Setup & Installation
 
-Prerequisites:
+1️⃣ Clone the Repository
 
-Android Studio Giraffe (or later)
+git clone https://github.com/your-repo/flickr-search.git
+cd flickr-search
 
-Kotlin Multiplatform Plugin
-
-Steps to Run:
-
-Clone this repository:
-
-git clone <repo-url>
-
-Open the project in Android Studio.
-
-Sync Gradle dependencies.
-
-Run the app on an emulator or a physical device.
-
-🚀 Run the App
+2️⃣ Open in Android Studio
 
 Open this directory in Android Studio.
 
 Wait for Gradle to sync dependencies.
+
+3️⃣ Configure API Keys
 
 Add the following values to your local.properties file:
 
@@ -122,48 +51,36 @@ SEARCH_METHOD=value
 API_KEY=value
 API_BASE_URL=https://api.flickr.com/services/rest/
 
-Please replace value with your real value.
+Please replace value with original value.
 
-Build & run the app.
+4️⃣ Run the App
 
-📂 Project Structure
+Build & Run the app on an emulator or physical device.
 
-📂 app/
-┣ 📂 data/       # Data sources (API, Database, Models)
-┣ 📂 domain/     # Business logic and Use Cases
-┣ 📂 presentation/  # ViewModel & UI (Jetpack Compose)
-┣ 📂 di/         # Dependency Injection (Koin)
+🧪 Unit Tests
 
-🧪 Testing
+The project includes unit tests for core functionalities:
 
-The project includes unit tests for critical functionalities:
+✅ Repository Tests
 
-Repository Tests: Verifies data retrieval and caching mechanisms.
+SearchRepositoryTest - Tests API calls and search history storage.
 
-Database Tests: Validates queries and persistence using SQLDelight.
+✅ Utility Function Tests
 
-Utility Function Tests: Ensures helper functions work as expected.
+DateTimeFormatterTest - Validates date formatting logic.
 
-To run tests, execute:
+✅ Database Tests
 
-./gradlew test
+SearchHistoryTableQueriesTest - Tests queries for storing and retrieving search history.
 
-🎯 Improvements & Future Enhancements
+Run tests using:
 
-✅ Paging for Infinite Scroll
-
-✅ Dark Mode Support
-
-✅ Better Error Handling
-
-✅ Platform-Specific UI Customization
-
-🤝 Credits
-
-Developed by Jhaman 🚀
-
-If you have any questions, feel free to reach out!
+gradlew testDebugUnitTest
 
 📜 License
 
 This project is licensed under the MIT License.
+
+🤝 Contribution
+
+Contributions are welcome! Feel free to open an issue or submit a pull request.
