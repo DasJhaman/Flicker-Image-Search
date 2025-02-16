@@ -71,6 +71,11 @@ The application is divided into three main layers:
     -   Repositories interact with data sources to fetch or store data.
     -   The Domain layer interacts with Repositories to access data.
 
+## 🖼️ Screenshots
+
+### Android
+![Android Video]()
+
 ## 📦 Compiled APK
 
 For those who want to quickly try out the app without building it from source, a pre-compiled APK is available:
