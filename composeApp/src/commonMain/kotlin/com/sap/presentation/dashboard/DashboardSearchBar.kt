@@ -24,6 +24,7 @@ import androidx.compose.runtime.getValue
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.graphics.Color
+import androidx.compose.ui.platform.testTag
 import androidx.compose.ui.unit.dp
 import com.sap.domain.model.SearchHistory
 import com.sap.presentation.components.DefaultDivider
@@ -67,6 +68,7 @@ fun DashboardSearchBar(
                     )
                 },
                 leadingIcon = { Icon(Icons.Default.Search, contentDescription = null) },
+                modifier = Modifier.testTag("SearchTextField") // 👈 Add this line
             )
         },
         expanded = searchExpanded,

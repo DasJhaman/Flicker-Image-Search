@@ -20,6 +20,7 @@ import androidx.compose.ui.Modifier
 import androidx.compose.ui.graphics.Brush
 import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.layout.ContentScale
+import androidx.compose.ui.platform.testTag
 import androidx.compose.ui.text.style.TextOverflow
 import androidx.compose.ui.unit.dp
 import com.sap.domain.model.Photo
@@ -42,7 +43,7 @@ fun DashboardScreenContentLoaded(
         ) {
             LazyVerticalGrid(
                 columns = GridCells.Adaptive(minSize = 150.dp),
-                modifier = Modifier.fillMaxSize()
+                modifier = Modifier.fillMaxSize().testTag("photoGrid")
             ) {
                 items(photo) { item ->
                     PhotoCardItem(item)

@@ -5,7 +5,7 @@ import kotlin.test.assertEquals
 
 class DateTimeFormatterTest {
     @Test
-    fun `test toFormattedDateTime with valid epoch timestamp`() {
+    fun test_toFormattedDateTime_with_valid_epoch_timestamp() {
         val epochTime = 1739654019723L // 15-02-2024 22:13 UTC
         val epochTime2 = 1739653858258L // 15-02-2025 22:10 UTC
 

@@ -12,6 +12,7 @@ import androidx.compose.material3.Text
 import androidx.compose.runtime.Composable
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
+import androidx.compose.ui.platform.testTag
 import androidx.compose.ui.unit.dp
 import flickerimagesearch.composeapp.generated.resources.Res
 import flickerimagesearch.composeapp.generated.resources.generic_error_cta_title
@@ -26,7 +27,11 @@ fun GenericError(
     message: String = stringResource(resource = Res.string.generic_error_message),
     onRetryClicked: (() -> Unit)? = null,
 ) {
-    Column(modifier = Modifier.fillMaxSize(), verticalArrangement = Arrangement.Center, horizontalAlignment = Alignment.CenterHorizontally) {
+    Column(
+        modifier = Modifier.fillMaxSize().testTag("GenericError"),
+        verticalArrangement = Arrangement.Center,
+        horizontalAlignment = Alignment.CenterHorizontally
+    ) {
 
         Text(
             text = title.uppercase(),
@@ -42,7 +47,11 @@ fun GenericError(
 
         onRetryClicked?.let {
             Spacer(modifier = Modifier.size(10.dp))
-            DefaultButton(onClick = onRetryClicked, modifier = Modifier.widthIn(min = 200.dp), text = stringResource(resource = Res.string.generic_error_cta_title))
+            DefaultButton(
+                onClick = onRetryClicked,
+                modifier = Modifier.widthIn(min = 200.dp).testTag("RetryButton"),
+                text = stringResource(resource = Res.string.generic_error_cta_title)
+            )
         }
 
     }

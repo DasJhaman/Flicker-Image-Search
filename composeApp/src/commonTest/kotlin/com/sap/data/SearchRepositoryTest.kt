@@ -28,7 +28,7 @@ class SearchRepositoryTest {
     }
 
     @Test
-    fun `searchPhotos should return success when API call is successful`() = runBlocking {
+    fun searchPhotos_should_return_success_when_API_call_is_successful() = runBlocking {
         val mockPhoto = PhotoDto(
             photoId = "123",
             title = "example.jpg",
@@ -63,8 +63,7 @@ class SearchRepositoryTest {
     }
 
     @Test
-    fun `searchPhotos should return error when API call fails`() = runBlocking {
-        // Mock an API failure
+    fun searchPhotos_should_return_error_when_API_call_fails() = runBlocking {
         everySuspend { api.search("test") } returns Result.failure(Exception("Network error"))
         everySuspend { searchHistoryDao.upsertSearchHistory("test") } returns Unit
 

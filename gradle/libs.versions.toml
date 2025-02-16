@@ -21,6 +21,7 @@ kotlinx-datetime = "0.6.1"
 
 navigation = "2.8.0-alpha10"
 sqlDelight = "2.0.2"
+ui-test = "1.6.8"
 
 [libraries]
 kotlin-test = { module = "org.jetbrains.kotlin:kotlin-test", version.ref = "kotlin" }
@@ -34,7 +35,7 @@ androidx-lifecycle-runtime-compose = { group = "org.jetbrains.androidx.lifecycle
 buildConfig = { group = "com.codingfeline.buildkonfig", name = "buildkonfig-gradle-plugin", version.ref = "buildConfigVersion" }
 image-loader = { module = "io.github.qdsfdhvh:image-loader", version.ref = "imageLoader" }
 kotlinx-datetime = { group = "org.jetbrains.kotlinx", name = "kotlinx-datetime", version.ref = "kotlinx-datetime" }
-
+test-manifest = { group = "androidx.compose.ui", name = "ui-test-manifest", version.ref = "ui-test" }
 koin-core = { group = "io.insert-koin", name = "koin-core", version.ref = "koin" }
 koin-compose-android = { group = "io.insert-koin", name = "koin-androidx-compose", version.ref = "koin" }
 koin-compose-vm = { module = "io.insert-koin:koin-compose-viewmodel", version.ref = "koin" }

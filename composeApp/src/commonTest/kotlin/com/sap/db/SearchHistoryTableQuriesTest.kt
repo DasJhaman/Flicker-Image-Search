@@ -18,7 +18,7 @@ class SearchHistoryTableQuriesTest: DatabaseQueriesTest() {
     }
 
     @Test
-    fun `insert search history should store data`() = runBlocking {
+    fun insert_search_history_should_store_data() = runBlocking {
         searchHistoryTableQueries.upsertSearchHistory("testQuery", timestamp = 123)
 
         val result = searchHistoryTableQueries.selectSearchHistory().executeAsList()
@@ -27,7 +27,7 @@ class SearchHistoryTableQuriesTest: DatabaseQueriesTest() {
     }
 
     @Test
-    fun `search history should return unique values`() = runBlocking {
+    fun search_history_should_return_unique_values() = runBlocking {
         searchHistoryTableQueries.upsertSearchHistory("hello",12)
         searchHistoryTableQueries.upsertSearchHistory("hello",123)
         searchHistoryTableQueries.upsertSearchHistory("world",123)
@@ -39,7 +39,7 @@ class SearchHistoryTableQuriesTest: DatabaseQueriesTest() {
     }
 
     @Test
-    fun `delete search history by id should remove specific entry`() = runBlocking {
+    fun delete_search_history_by_id_should_remove_specific_entry() = runBlocking {
         searchHistoryTableQueries.upsertSearchHistory("test1",123)
         searchHistoryTableQueries.upsertSearchHistory("test2",123)
 
@@ -54,7 +54,7 @@ class SearchHistoryTableQuriesTest: DatabaseQueriesTest() {
     }
 
     @Test
-    fun `clearSearchHistory should remove all entries`() = runBlocking {
+    fun clearSearchHistory_should_remove_all_entries() = runBlocking {
         searchHistoryTableQueries.upsertSearchHistory("test1",123)
         searchHistoryTableQueries.upsertSearchHistory("test2",123)
 
